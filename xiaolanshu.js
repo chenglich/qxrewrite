@@ -1,7 +1,7 @@
 
 [rewrite_local]
 
-https?:\/\/api\.u\.ccb\.com\/website\/player\/studyScheduleSubmit url script-request-body https://github.com/chenglich/qxrewrite/raw/master/xiaolanshu.js
+https?:\/\/api\.u\.ccb\.com\/website\/player\/studyScheduleSubmit url script-request-body https://raw.githubusercontent.com/chenglich/qxrewrite/main/xiaolanshu.js
 
 
 [mitm] 
