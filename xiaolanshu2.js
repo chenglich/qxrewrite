@@ -12,7 +12,7 @@ aaaaaaaa
 *******/
 
 console.log($response.body);
-var body = $response.body.replace(/0,/g, '1,');
+var body = $response.body.replace(/0,/g, '1,').replace(/0]/g,'1]');
 console.log(body);
 
 $done({ body });
