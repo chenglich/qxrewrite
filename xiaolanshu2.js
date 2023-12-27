@@ -8,9 +8,8 @@ https://raw.githubusercontent.com/chenglich/qxrewrite/main/xiaolanshu2.js
 
 hostname=api.u.ccb.com
 
-***********************************/
 console.log($response.body);
-var body = $response.body.replace('0,', '1,');
+var body = $response.body.replace(/0,/g, '1,');
 console.log(body);
 
 $done({ body });
