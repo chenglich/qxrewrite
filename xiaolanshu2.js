@@ -7,6 +7,8 @@ https://raw.githubusercontent.com/chenglich/qxrewrite/main/xiaolanshu2.js
 [mitm] 
 
 hostname=api.u.ccb.com
+
+aaaaaaaa
 *******/
 
 console.log($response.body);
