@@ -8,6 +8,6 @@ https?:\/\/api\.u\.ccb\.com\/website\/player\/studypointview url script-response
 hostname=api.u.ccb.com
 
 ***********************************/
-var body = $response.body.replace(/0,/g, '1,')
+var body = $response.body.replace('0,', '1,')
 
 $done({ body })
