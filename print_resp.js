@@ -1,2 +1,2 @@
-var obj=JSON.parse($response.body);
+var obj=$response.body;
 console.log(obj);
