@@ -1,56 +1,12 @@
 /*
-【GLaDOS】@evilbutcher
-
-【仓库地址】https://github.com/evilbutcher/Quantumult_X/tree/master（欢迎star🌟）
-
-【BoxJs】https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/evilbutcher.boxjs.json
-
-【致谢】
-本脚本使用了Chavy的Env.js，感谢！
-
-⚠️【免责声明】
-------------------------------------------
-1、此脚本仅用于学习研究，不保证其合法性、准确性、有效性，请根据情况自行判断，本人对此不承担任何保证责任。
-2、由于此脚本仅用于学习研究，您必须在下载后 24 小时内将所有内容从您的计算机或手机或任何存储设备中完全删除，若违反规定引起任何事件本人对此均不负责。
-3、请勿将此脚本用于任何商业或非法目的，若违反规定请自行对此负责。
-4、此脚本涉及应用与本人无关，本人对因此引起的任何隐私泄漏或其他后果不承担任何责任。
-5、本人对任何脚本引发的问题概不负责，包括但不限于由脚本错误引起的任何损失和损害。
-6、如果任何单位或个人认为此脚本可能涉嫌侵犯其权利，应及时通知并提供身份证明，所有权证明，我们将在收到认证文件确认后删除此脚本。
-7、所有直接或间接使用、查看此脚本的人均应该仔细阅读此声明。本人保留随时更改或补充此声明的权利。一旦您使用或复制了此脚本，即视为您已接受此免责声明。
-
-登陆链接：https://glados.rocks/，登陆即可获取Cookie。
-注册地址：https://github.com/glados-network/GLaDOS
-邀请码：3JRG4-KSGZJ-8QPXF-8PPOO
-
-【Surge】
------------------
-[Script]
-GLaDOS签到 = type=cron,cronexp=5 0 * * *,wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/glados.js
-
-获取GLaDOS_Cookie = type=http-request, pattern=https:\/\/glados\.rocks\/api\/user\/checkin, script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/glados.js
-
-【Loon】
------------------
-[Script]
-cron "5 0 * * *" tag=GLaDOS签到, script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/glados.js
-
-http-request https:\/\/glados\.rocks\/api\/user\/checkin tag=获取GLaDOS_Cookie, script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/glados.js
-
-
 【Quantumult X】
 -----------------
 [rewrite_local]
-https:\/\/glados\.rocks\/api\/user\/checkin url script-request-header https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/glados.js
 
-[task_local]
-1 0 * * * https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/glados.js
-
-
-【All App MitM】
-hostname = glados.rocks
+[mitm]
 */
 
-const $ = new Env("GLaDOS");
+const $ = new Env("qxr");
 const signcookie = "evil_gladoscookie";
 const signauthorization = "evil_galdosauthorization"
 
@@ -67,11 +23,11 @@ var message = "";
 
 !(async () => {
   if (typeof $request != "undefined") {
-    getCookie();
+    handle_req_body();
     return;
   }
-  await signin();
-  await status();
+  // await signin();
+  // await status();
 })()
   .catch((e) => {
     $.log("", `❌失败! 原因: ${e}!`, "");
@@ -80,6 +36,7 @@ var message = "";
     $.done();
   });
 
+/**************************************
 function signin() {
   return new Promise((resolve) => {
     const header = {
@@ -156,20 +113,17 @@ function status() {
     });
   });
 }
-
-function getCookie() {
+**************************************/
+  
+function handle_req_body() {
   if (
     $request &&
     $request.method != "OPTIONS" &&
-    $request.url.match(/checkin/)
+    $request.url.match(/batch/)
   ) {
-    const sicookie = $request.headers["Cookie"];
-    $.log(sicookie);
-    $.setdata(sicookie, signcookie);
-    const siauthorization = $request.headers["Authorization"];
-    $.log(siauthorization);
-    $.setdata(siauthorization, signauthorization);
-    $.msg("GLaDOS", "", "获取签到Cookie成功🎉");
+    var req_body = request.body;
+    var obj = JSON.parse(req_body);
+    $.log(obj);
   }
 }
 
