@@ -7,19 +7,6 @@
 */
 
 const $ = new Env("qxr");
-const signcookie = "evil_gladoscookie";
-const signauthorization = "evil_galdosauthorization"
-
-var sicookie = $.getdata(signcookie);
-var siauthorization = $.getdata(siauthorization)
-var account;
-var expday;
-var remain;
-var remainday;
-var change;
-var changeday;
-var msge;
-var message = "";
 
 !(async () => {
   if (typeof $request != "undefined") {
