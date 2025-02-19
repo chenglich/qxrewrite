@@ -110,9 +110,10 @@ function handle_req_body() {
   ) {
     var req_body = request.body;
     var obj = JSON.parse(req_body);
+    $.log(obj);
 
 
-    obj.requests.forEach(request => {
+    obj.data.requests.forEach(request => {
   // 检查是否存在url，并且url包含 "remove-heart"
   if (request.url && request.url.includes("remove-heart")) {
     // 如果匹配到，则执行相关操作
