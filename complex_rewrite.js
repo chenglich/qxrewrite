@@ -1,4 +1,5 @@
 /*
+https://github.com/5oops/laughing-octo-pancake/blob/master/glados.js
 【Quantumult X】
 -----------------
 [rewrite_local]
