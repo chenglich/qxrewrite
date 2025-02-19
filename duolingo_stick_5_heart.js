@@ -1,5 +1,5 @@
 /**************************************
-
+https://github.com/5oops/laughing-octo-pancake/blob/master/duolingo.com.js
 [rewrite_local]
 ^https?:\/\/ios-api-2\.duolingo\.com\/(2017-06-30|2023-05-23)\/batch url script-response-body https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/duolingo.com.js
 ^https?:\/\/ios-api-2\.duolingo\.com\/(2017-06-30|2023-05-23)\/users\/(\d+)\/available-features url script-response-body https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/duolingo.com.js
