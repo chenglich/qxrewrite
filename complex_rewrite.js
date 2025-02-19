@@ -123,7 +123,21 @@ function handle_req_body() {
   ) {
     var req_body = request.body;
     var obj = JSON.parse(req_body);
-    $.log(obj);
+
+
+    obj.requests.forEach(request => {
+  // 检查是否存在url，并且url包含 "remove-heart"
+  if (request.url && request.url.includes("remove-heart")) {
+    // 如果匹配到，则执行相关操作
+    $.log("Found a matching URL:", request.url);
+    // 在这里添加你要执行的操作
+  }
+  else {
+    // 如果没有匹配到，跳过
+    $.log("No matching URL or missing URL.");
+  }
+});
+
   }
 }
 
