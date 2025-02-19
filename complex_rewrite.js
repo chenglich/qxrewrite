@@ -23,7 +23,7 @@ const $ = new Env("qxr");
     $.done();
   });
 
-/**************************************
+
 // function signin() {
 //   return new Promise((resolve) => {
 //     const header = {
@@ -100,7 +100,6 @@ const $ = new Env("qxr");
 //     });
 //   });
 // }
-**************************************/
   
 function handle_req_body() {
   if (
