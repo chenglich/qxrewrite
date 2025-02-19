@@ -39,7 +39,7 @@ if ((url.indexOf('ios-api-2.duolingo.com/2017-06-30/users/') !== -1 || url.index
 *************************************/
 
 const url = $request.url
-const isCheckUrl = (url) => (url.includes('ios-api-2.duolingo.com/2017-06-30/batch') || url.includes('ios-api-2.duolingo.com/2023-05-23/batch') )
+const isCheckUrl = (url) => (url.includes('ios-api-2.duolingo.cn/2017-06-30/batch') || url.includes('ios-api-2.duolingo.cn/2023-05-23/batch') )
 
 if (isCheckUrl(url)) {
   var rBody = $response.body;
