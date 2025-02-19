@@ -107,7 +107,7 @@ function handle_req_body() {
     $request.method != "OPTIONS" &&
     $request.url.match(/batch/)
   ) {
-    var req_body = request.body;
+    var req_body = $request.body;
     var obj = JSON.parse(req_body);
     $.log(obj);
 
