@@ -109,10 +109,8 @@ function handle_req_body() {
     $request.url.match(/batch/)
   ) {
     var req_body = $request.body;
-    var obj = JSON.parse(req_body);
     $.log($request.body);
-    $.log(obj);
-
+    var obj = JSON.parse(req_body);
 
     obj.requests.forEach(request => {
   // 检查是否存在url，并且url包含 "remove-heart"
