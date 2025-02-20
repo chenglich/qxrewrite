@@ -7,7 +7,7 @@ https://github.com/5oops/laughing-octo-pancake/blob/master/glados.js
 [mitm]
 */
 
-const $ = new Env("qxr");
+const $ = new Env("duolingo batch rewrite");
 
 !(async () => {
   if (typeof $request != "undefined") {
@@ -110,10 +110,11 @@ function handle_req_body() {
   ) {
     var req_body = $request.body;
     var obj = JSON.parse(req_body);
+    $.log($request.body);
     $.log(obj);
 
 
-    obj.data.requests.forEach(request => {
+    obj.requests.forEach(request => {
   // 检查是否存在url，并且url包含 "remove-heart"
   if (request.url && request.url.includes("remove-heart")) {
     // 如果匹配到，则执行相关操作
