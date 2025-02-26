@@ -43,7 +43,18 @@ const isCheckUrl = (url) => (url.includes('ios-api-2.duolingo.cn/2017-06-30/batc
 
 if (isCheckUrl(url)) {
   var rBody = $response.body;
+  
+  var regex = /\\"hearts\\":\d/g;
+  var before_matches = rBody.match(regex);
+  console.log(before_matches);
+
+
   rBody = rBody.replace(/\\"hearts\\":\d/g, '\\"hearts\\":5');
+
+
+  var after_matches = rBody.match(regex);
+  console.log(after_matches);
+
 
   $done( { 'body': rBody } );
 }
