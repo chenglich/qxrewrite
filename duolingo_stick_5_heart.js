@@ -40,9 +40,15 @@ if ((url.indexOf('ios-api-2.duolingo.com/2017-06-30/users/') !== -1 || url.index
 
 const url = $request.url
 const isCheckUrl = (url) => (url.includes('ios-api-2.duolingo.cn/2017-06-30/batch') || url.includes('ios-api-2.duolingo.cn/2023-05-23/batch') )
-
+console.log("duolingo hearts start"}
 if (isCheckUrl(url)) {
+  console.log(url)
   var rBody = $response.body;
+
+  var regex_all = /\\"health\\":{[^}]*}/g;
+  var all_matches = rBody.match(regex);
+  console.log(all_matches);
+
   
   var regex = /\\"hearts\\":\d/g;
   var before_matches = rBody.match(regex);
