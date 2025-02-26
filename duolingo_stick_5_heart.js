@@ -46,7 +46,7 @@ if (isCheckUrl(url)) {
   var rBody = $response.body;
 
   var regex_all = /\\"health\\":{[^}]*}/g;
-  var all_matches = rBody.match(regex);
+  var all_matches = rBody.match(regex_all);
   console.log(all_matches);
 
   
