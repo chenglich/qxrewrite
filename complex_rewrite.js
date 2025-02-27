@@ -118,10 +118,12 @@ function handle_req_body() {
     // 如果匹配到，则执行相关操作
     $.log("Found a matching URL:", request.url);
     // 在这里添加你要执行的操作
+    $done({response: {status: 403}});
   }
   else {
     // 如果没有匹配到，跳过
     $.log("No matching URL or missing URL.");
+    $done();
   }
 });
 
