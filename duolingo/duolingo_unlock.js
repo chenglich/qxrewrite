@@ -1,4 +1,4 @@
-if ((url.indexOf('ios-api-2.duolingo.cn/2017-06-30/users/') !== -1 || url.indexOf('ios-api-2.duolingo.com/2023-05-23/users/') !== -1 ) && url.indexOf('available-features') !== -1 ) {
+if ((url.indexOf('ios-api-2.duolingo.cn/2017-06-30/users/') !== -1 || url.indexOf('ios-api-2.duolingo.cn/2023-05-23/users/') !== -1 ) && url.indexOf('available-features') !== -1 ) {
   console.log("duolingo unlock start...")
     const unlock = {
         "purchasableFeatures": ["CAN_PURCHASE_IAP", "CAN_PURCHASE_SUBSCRIPTION", "CAN_PURCHASE_MAX"],
