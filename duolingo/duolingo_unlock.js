@@ -1,3 +1,5 @@
+const url = $request.url
+
 if ((url.indexOf('ios-api-2.duolingo.cn/2017-06-30/users/') !== -1 || url.indexOf('ios-api-2.duolingo.cn/2023-05-23/users/') !== -1 ) && url.indexOf('available-features') !== -1 ) {
   console.log("duolingo unlock start...")
     const unlock = {
