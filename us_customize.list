@@ -1,14 +1,15 @@
 # NAME: us_customize
 # AUTHOR: chenglich
 # REPO: 
-# UPDATED: 2025-07-31 13:00:10
+# UPDATED: 2025-09-10 21:46:10
 # DOMAIN: 0
 # DOMAIN-KEYWORD: 0
 # DOMAIN-SUFFIX: 2
 # PROCESS-NAME: 0
 # USER-AGENT: 0
-# TOTAL: 2
+# TOTAL: 3
 # 
 # 
 DOMAIN-SUFFIX,google.com
 DOMAIN-SUFFIX,notebooklm.google
+DOMAIN-SUFFIX,notebooklm.google.com
